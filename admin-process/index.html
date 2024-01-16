@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin process</title>
+    <style>
+        
+        .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; /* This will add space around the child elements */
+    height: 100vh;
+    background-color: darkblue;
+    padding: 20px; /* This will add some space around the edges of the container */
+}
+
+.create-user, .view-user {
+    width: 45%; /* Reduced width to account for the added padding in the container */
+    height: 80%; /* Reduced height for a more balanced look */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* This will make the corners slightly rounded */
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75); /* This will add a subtle shadow effect */
+}
+
+.create-user {
+    margin-right: 5%; /* This will add some space between the two sections */
+    background-color: white;
+}
+
+.view-user {
+    background-color: white;
+}
+.layer {
+    width: 80%; /* Reduced width for a more balanced look */
+    height: auto; /* This will allow the height to adjust based on the content */
+    background: #EAECFF;
+    border-radius: 10px; /* This will make the corners slightly rounded */
+    padding: 20px; /* This will add some space inside the layer */
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15); /* This will add a subtle shadow effect */
+    margin-bottom: 20px; /* This will add some space below each layer */
+}
+
+input[type=text], input[type=password] {
+    width: 80%; /* Reduced width for a more balanced look */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px; /* This will make the corners of the input fields slightly rounded */
+    margin-left: 20px;
+}
+
+button {
+    background-color: blue;
+    margin-left: 40%;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer; /* This will change the cursor to a hand icon when hovering over the button */
+    border-radius: 5px; /* This will make the corners of the button slightly rounded */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="create-user">
+            <h2>Create User</h2>
+            <form>
+                <input type="text" placeholder="User ID" />
+                <input type="password" placeholder="Password" />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="view-user">
+            <h2>View User</h2>
+            <div class="user-card">
+                <div class="layer">
+                <input type="text" placeholder="5644"/>
+                <!-- Add other user details here -->
+            </div>
+                <button>View</button>
+            </div>
+
+            <!-- Repeat .user-card for more users -->
+        </div>
+    </div>
+</body>
+</html>
