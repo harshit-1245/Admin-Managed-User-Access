@@ -7,6 +7,11 @@ body {
   background-color: #D0E8F2;
   font-family: Arial, sans-serif;
 }
+.whole{
+  width: 100%;
+  height: 100%;
+  
+}
 
 .container {
     display: flex;
@@ -84,18 +89,41 @@ input[type=text] {
 }
 </style>
 <script>
-function viewButtonClicked() {
-  // Create a new window and set its properties
-  var newWindow = window.open("", "newWindow", "width=609,height=958,left=903");
-  newWindow.document.write("<h1>New Page</h1>");
+function showSecondPage() {
+    // Create a new div for the second page
+    let secondPage = document.createElement("div");
+    secondPage.className = "second-page";
+
+    // Add the HTML for the second page
+    secondPage.innerHTML = `
+        <button class="back" onclick="showFirstPage()">Back</button>
+        <label for="fname">Name</label><br>
+        <input type="text" id="fname" name="fname" value="Ramesh Kumar" disabled><br>
+        <label for="fphoto">Photo</label><br>
+        <div class="photo">
+            <img src="path_to_image" alt="User Photo" width="100" height="100">
+        </div>
+        <p style="color:red;">Not Accepted by Admin</p>
+    `;
+
+    // Replace the content of the body with the new content
+    document.body.innerHTML = "";
+    document.body.appendChild(secondPage);
 }
+
+function showFirstPage() {
+    // Add the HTML for the first page
+    // Replace 'firstPageHTML' with the actual HTML for the first page
+    window.history.back()
+}
+
 </script>
 </head>
 <body>
-
+<div class="whole">
 <div class="container">
     <div class="section">
-  <button class="view-btn" onclick="viewButtonClicked()">View</button>
+  <button class="view-btn" onclick="showSecondPage()">View</button>
   <label for="fname">Name</label><br>
   <input type="text" id="fname" name="fname"><br>
   <label for="fphoto">Photo</label><br>
@@ -105,6 +133,7 @@ function viewButtonClicked() {
     </div>
   </div>
   <button class="btn">Upload</button>
+</div>
 </div>
 </div>
 
